@@ -19,22 +19,43 @@ public class CountyInformationResource {
 
     @Autowired
     CountyInformationService service;
-
+    /**
+     * Validate coordinates belong to a given  route.
+     *
+     * @param
+     * @return
+     */
     @GetMapping
     public String countyInfo() {
         return scraperService.extractCountyData();
     }
-
+    /**
+     * Fetch all counties information
+     *
+     * @param
+     * @return
+     */
     @GetMapping("/all")
     public List<CountyInformation> fetchAllCountyInformation() {
         return service.fetchAll();
     }
+    /**
+     * Fetch county information
+     *
+     * @param
+     * @return
+     */
     @GetMapping("/county")
     public ResponseEntity fetchCountyInfo(@RequestParam String name) {
         var resp =  service.fetchCountyInfo(name);
         return ResponseEntity.status(resp.getCode()).body(resp);
     }
-
+    /**
+     * Create county information
+     *
+     * @param
+     * @return
+     */
     @PostMapping
     public CountyInformation createCountyInfo(@RequestBody CountyInformation information) {
         return service.createCountyInfo(information);

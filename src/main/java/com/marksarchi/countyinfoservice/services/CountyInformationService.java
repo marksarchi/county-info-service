@@ -16,15 +16,32 @@ import java.util.List;
 public class CountyInformationService {
     @Autowired
     CountyInformationRepository repository;
-
+    /**
+     * Fetch all counties information
+     *
+     * @param
+     * @return
+     */
     public List<CountyInformation> fetchAll(){
         return repository.findAll();
 
     }
+    /**
+     * Create county information
+     *
+     * @param
+     * @return
+     */
     public CountyInformation createCountyInfo(CountyInformation countyInformation){
         return repository.save(countyInformation);
     }
 
+    /**
+     * Fetch county information
+     *
+     * @param
+     * @return
+     */
     public ResponseWrapper fetchCountyInfo(String name) {
        var resp =  repository.findCountyInformationByName(name.trim());
         if(resp.isPresent()){
