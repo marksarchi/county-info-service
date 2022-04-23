@@ -26,8 +26,9 @@ public class CountyInformationResource {
      * @return
      */
     @GetMapping
-    public String countyInfo() {
-        return scraperService.extractCountyData();
+    public ResponseEntity countyInfo() {
+        var res = scraperService.extractCountyData();
+        return ResponseEntity.ok().body(res);
     }
     /**
      * Fetch all counties information
