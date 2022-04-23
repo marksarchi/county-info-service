@@ -63,4 +63,8 @@ public class CountyInformationService {
     public List<CountyInformation> createCountiesInfo(List<CountyInformation> information) {
         return repository.saveAll(information);
     }
+
+    public List<CountyInformation> persistCountyInfos(List<CountyInformation> countyInformations) {
+        return repository.saveAll(countyInformations);
+    }
 }

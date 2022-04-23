@@ -44,7 +44,7 @@ public class ScraperService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return countyInformations;
+        return countyInformationService.persistCountyInfos(countyInformations);
     }
 
     public CountyInformation mapCountyInfo(Elements tds) {

@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="1" author="Mark Sarchi">
+        <sql>
+            create table county_information
+            (
+                id                   uuid         not null primary key,
+                creation_date        timestamp,
+                last_modified_date   timestamp,
+                code                 varchar(255) ,
+                area                 varchar(255) ,
+                capital              varchar(255) ,
+                governor             varchar(255) ,
+                deputy_governor      varchar(255) ,
+                population_2009      varchar(255) ,
+                population_2019      varchar(255) ,
+                women_representative varchar(255)
+
+
+            );
+        </sql>
+    </changeSet>
+
+
+</databaseChangeLog>
